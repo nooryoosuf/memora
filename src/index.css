@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background-color: #FAF8F5;
+    color: #1C1A18;
+    overflow-x: hidden;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAF8F5;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D6D3D1;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A8A29E;
+  }
+}
+
+@layer utilities {
+  .font-serif-italic {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+  }
+  
+  .font-editorial {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Subtle transitions for luxury feel */
+.image-zoom-hover {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+.image-zoom-hover:hover {
+  transform: scale(1.03);
+}
+
+/* Print styling for QR sign */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    page-break-inside: avoid;
+  }
+}
